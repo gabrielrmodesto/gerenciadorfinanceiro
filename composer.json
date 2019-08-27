@@ -7,7 +7,9 @@
             "email": "gabrielrmodesto5@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+		"robmorgan/phinx": "0.7.1"
+	},
     "autoload": {
         "psr-4": {
             "App\\": "src/"
