@@ -4,9 +4,9 @@ return [
     'development' => [
         'driver' => 'mysql',
         'host' => 'localhost',
-        'database' => 'sistema_financeiro',
+        'database' => 'son_financas',
         'username' => 'root',
-        'password' => '',
+        'password' => 'g07t19c29',
         'charset' => 'utf8',
         'collation' => 'utf8_unicode_ci'
     ]
