@@ -1,5 +1,6 @@
 <?php
 
+use Faker\Factory;
 use Phinx\Seed\AbstractSeed;
 
 class CategoryCostsSeeder extends AbstractSeed{
@@ -12,18 +13,18 @@ class CategoryCostsSeeder extends AbstractSeed{
      * http://docs.phinx.org/en/latest/seeding.html
      */
     public function run(){
+		$faker = Factory::create('pt_BR');
+		$data = [];
 		$categoryCosts = $this->table('category_costs');
-		$categoryCosts->insert([
-									[
-										'name' => 'Category 1',
-										'created_at' => date('Y-m-d H:i:s'),
-										'updated_at' => date('Y-m-d H:i:s')
-									],
-									[
-										'name' => 'Category 2',
-										'created_at' => date('Y-m-d H:i:s'),
-										'updated_at' => date('Y-m-d H:i:s')
-									]
-								])->save();
+
+		foreach(range(1,10) as $value){
+			$data[] =
+				[
+					'name' => $faker->name,
+					'created_at' => date('Y-m-d H:i:s'),
+					'updated_at' => date('Y-m-d H:i:s')
+				];
+		}
+		$categoryCosts->insert($data)->save();
     }
 }
